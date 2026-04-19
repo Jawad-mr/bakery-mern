@@ -110,7 +110,7 @@ export default function BillingPage() {
                 const oos = p.stock <= 0
                 return (
                   <div key={p._id} onClick={() => !oos && addToCart(p)}
-                    style={{ background: 'var(--c-surface)', border: `1.5px solid ${inCart ? 'var(--c-gold)' : 'var(--c-border-soft)'}`, borderRadius: 'var(--radius-lg)', padding: '16px 12px', textAlign: 'center', cursor: oos ? 'not-allowed' : 'pointer', opacity: oos ? .5 : 1, transition: 'all .15s', position: 'relative', background: inCart ? 'var(--c-gold-pale)' : 'var(--c-surface)' }}
+                    style={{ background: inCart ? 'var(--c-gold-pale)' : 'var(--c-surface)', border: `1.5px solid ${inCart ? 'var(--c-gold)' : 'var(--c-border-soft)'}`, borderRadius: 'var(--radius-lg)', padding: '16px 12px', textAlign: 'center', cursor: oos ? 'not-allowed' : 'pointer', opacity: oos ? .5 : 1, transition: 'all .15s', position: 'relative' }}
                     onMouseEnter={e => { if (!oos) { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = 'var(--shadow-md)' } }}
                     onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '' }}>
                     {inCart && <span style={{ position: 'absolute', top: 8, right: 8, background: 'var(--c-gold)', color: '#fff', borderRadius: 99, fontSize: 10, fontWeight: 700, padding: '2px 7px' }}>{inCart.qty}</span>}
